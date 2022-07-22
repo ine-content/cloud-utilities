@@ -1,0 +1,9 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - python3
+  - wget
+  - curl
+runcmd:
+  - [curl, -o, /usr/local/bin/simpleServer.py,https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/pythonWebServer.py ]
+  - python3 /usr/local/bin/simpleServer.py &
