@@ -28,7 +28,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes("<body>", "utf-8"))
             self.wfile.write(bytes("<h2>INE Simple Web App</h2>", "utf-8"))
             self.wfile.write(bytes("<p>This web app is written with a simple Python script. It is not robust, so be gentle.</p>", "utf-8"))
-            self.wfile.write(bytes("<table><tr><th>Setting</th><th>Value</ht></tr>", "utf-8"))
+            self.wfile.write(bytes("<table><tr style='text-align:left'><th>Setting</th><th>Value</ht></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Host name</td><td>{socket.gethostname()}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Host IP</td><td>{self.server.server_address[0]}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Requestor Address</td><td>{self.address_string()}</td></tr>", "utf-8"))
