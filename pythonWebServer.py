@@ -17,6 +17,9 @@ serverPort = os.getenv('INE_PORT') or 8080
 serverPort = sys.argv[1] if len(sys.argv) > 1 else serverPort
 serverPort = int(serverPort)
 
+actualHostName = socket.gethostname()
+actualhostIp = socket.gethostbyname(actualHostName)
+
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
 
@@ -29,8 +32,8 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes("<h2>INE Simple Web App</h2>", "utf-8"))
             self.wfile.write(bytes("<p>This web app is written with a simple Python script. It is not robust, so be gentle.</p>", "utf-8"))
             self.wfile.write(bytes("<table><tr style='text-align:left'><th>Setting</th><th>Value</ht></tr>", "utf-8"))
-            self.wfile.write(bytes(f"<tr><td>Host name</td><td>{socket.gethostname()}</td></tr>", "utf-8"))
-            self.wfile.write(bytes(f"<tr><td>Host IP</td><td>{self.server.server_address[0]}</td></tr>", "utf-8"))
+            self.wfile.write(bytes(f"<tr><td>Host name</td><td>{actualHostName}</td></tr>", "utf-8"))
+            self.wfile.write(bytes(f"<tr><td>Host IP</td><td>{actualhostIp}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Requestor Address</td><td>{self.address_string()}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Request date</td><td>{self.date_time_string()}</td></tr>", "utf-8"))
             self.wfile.write(bytes("</table>", "utf-8"))
@@ -40,8 +43,8 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(bytes("{", "utf-8"))
-            self.wfile.write(bytes(f"'hostName':'{socket.gethostname()}',", "utf-8"))
-            self.wfile.write(bytes(f"'hostIp':'{self.server.server_address[0]}',", "utf-8"))
+            self.wfile.write(bytes(f"'hostName':'{actualHostName}',", "utf-8"))
+            self.wfile.write(bytes(f"'hostIp':'{actualhostIp}',", "utf-8"))
             self.wfile.write(bytes(f"'requestorAddress':'{self.address_string()}',", "utf-8"))
             self.wfile.write(bytes(f"'requestDate':'{self.date_time_string()}'", "utf-8"))
             self.wfile.write(bytes("}", "utf-8"))
