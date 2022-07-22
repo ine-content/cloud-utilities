@@ -1,10 +1,21 @@
-# Python 3 server example
+# Simple web server. Call with no query string to return an HTML page. use ?api to return a JSON result.
+# Default port is 8080.
+# This can be changed by setting an environment variable: INE_PORT=8088
+#   or adding the port as a command line parameter: python3 pythonWebServer.py 8088
+# Created based on the example at https://pythonbasics.org/webserver/
+# Created by: Tracy Wallace
+# Created on: 2022-07-22
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import socket
+import os
+import sys
 
 hostName = "localhost"
-serverPort = 8080
+serverPort = os.getenv('INE_PORT') or 8080
+serverPort = sys.argv[1] if len(sys.argv) > 1 else serverPort
+serverPort = int(serverPort)
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
