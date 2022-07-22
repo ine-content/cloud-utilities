@@ -12,7 +12,7 @@ import socket
 import os
 import sys
 
-hostName = "localhost"
+hostName = ''
 serverPort = os.getenv('INE_PORT') or 8080
 serverPort = sys.argv[1] if len(sys.argv) > 1 else serverPort
 serverPort = int(serverPort)
