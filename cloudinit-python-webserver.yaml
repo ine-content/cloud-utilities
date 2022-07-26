@@ -5,5 +5,4 @@ packages:
   - wget
   - curl
 runcmd:
-  - [curl, -o, /usr/local/bin/simpleServer.py,https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/pythonWebServer.py ]
-  - python3 /usr/local/bin/simpleServer.py &
+  - curl https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/install.sh | sh

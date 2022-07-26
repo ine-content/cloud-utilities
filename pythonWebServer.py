@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 # Simple web server. Call with no query string to return an HTML page. use ?api to return a JSON result.
 # Default port is 8080.
 # This can be changed by setting an environment variable: INE_PORT=8088
