@@ -15,7 +15,7 @@ import os
 import sys
 
 hostName = ''
-serverPort = os.getenv('INE_PORT') or 8080
+serverPort = os.getenv('INE_PORT') or 80
 serverPort = sys.argv[1] if len(sys.argv) > 1 else serverPort
 serverPort = int(serverPort)
 
