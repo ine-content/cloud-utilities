@@ -1,0 +1,8 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - python3
+  - wget
+  - curl
+runcmd:
+  - curl https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/install-api.sh | sh

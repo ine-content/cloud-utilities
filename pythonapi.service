@@ -1,0 +1,8 @@
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=python3 /usr/local/bin/pythonWebServer.py 8080
+
+[Install]
+WantedBy=default.target
