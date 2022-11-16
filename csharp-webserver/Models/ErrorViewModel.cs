@@ -1,4 +1,4 @@
-namespace cloud_utilities.Models;
+namespace csharp_webserver.Models;
 
 public class ErrorViewModel
 {
