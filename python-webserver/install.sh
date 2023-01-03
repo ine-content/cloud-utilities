@@ -1,6 +1,6 @@
 gitRoot="https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main"
-serverUrl="$gitRoot/pythonWebServer.py"
-serviceUrl="$gitRoot/pythonweb.service"
+serverUrl="$gitRoot/python-webserver/pythonWebServer.py"
+serviceUrl="$gitRoot/python-webserver/pythonweb.service"
 serverFile="/usr/local/bin/pythonWebServer.py"
 serviceFile="/etc/systemd/system/pythonweb.service"
 wget -O $serverFile $serverUrl
