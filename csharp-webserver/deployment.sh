@@ -12,4 +12,4 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-docker run --name webapp -p 80:80 -d --restart always -e message=$msg twallace27603/inedemowebserver:latest
+docker run --name webapp -p 80:80 -d --restart always --env-file /var/lib/mywebapp/docenv twallace27603/inedemowebserver:latest
