@@ -1,0 +1,8 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - wget
+  - curl
+runcmd:
+  - msg="VM 1"
+  - curl https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/install.sh | sh
