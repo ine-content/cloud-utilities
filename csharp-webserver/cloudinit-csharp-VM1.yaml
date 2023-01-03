@@ -5,4 +5,4 @@ packages:
   - curl
 runcmd:
   - msg="VM 1"
-  - curl https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/install.sh | sh
+  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/csharp-webserver/deployment.sh | sh
