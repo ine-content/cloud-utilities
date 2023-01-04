@@ -1,4 +1,4 @@
 {
-    "fileUris": ["https://raw.githubusercontent.com/ine-content/Cloud-Labs/az104/Tracy/Templates/ARM/vmss/updateApp.sh?token=GHSAT0AAAAAAB4ST4PNSQ2NETMFGKNIIO3SY5VYW4Q"],
+    "fileUris": ["https://raw.githubusercontent.com/ine-content/cloud-utilities/main/demos/vmss/updateApp.sh"],
     "commandToExecute": "./updateApp.sh"
   }

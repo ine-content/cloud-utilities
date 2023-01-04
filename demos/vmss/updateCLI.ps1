@@ -4,4 +4,4 @@ az vmss extension set `
   --name CustomScript `
   --resource-group 02tasks `
   --vmss-name vmss `
-  --settings @updateapp.json
+  --settings .\updateapp.json
