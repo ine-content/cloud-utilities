@@ -3,9 +3,5 @@ package_upgrade: true
 packages:
   - wget
   - curl
-write_files:
-  - content: |
-      message=Scale set
-    path: /var/lib/mywebapp/docenv
 runcmd:
-  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/csharp-webserver/deployment.sh | sh
+  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/mysql/mysql_install.sh | sh
