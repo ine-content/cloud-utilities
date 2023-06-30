@@ -1,0 +1,1 @@
+mkdir /var/lib/mywebapp && echo "message=VM Demo" > /var/lib/mywebapp/docenv && curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/csharp-webserver/deployment.sh | sh
