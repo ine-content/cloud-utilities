@@ -5,4 +5,4 @@ packages:
   - wget
   - curl
 runcmd:
-  - curl https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main/install-api.sh | sh
+  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/python-webserver/install-api.sh | sh

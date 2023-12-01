@@ -1,4 +1,4 @@
-gitRoot="https://raw.githubusercontent.com/Internetworkexpert/cloud-utilities/main"
+gitRoot="https://raw.githubusercontent.com/ine-content/cloud-utilities/main/python-webserver"
 serverUrl="$gitRoot/pythonWebServer.py"
 serviceUrl="$gitRoot/pythonapi.service"
 serverFile="/usr/local/bin/pythonWebServer.py"
