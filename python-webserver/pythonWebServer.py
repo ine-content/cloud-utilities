@@ -36,9 +36,17 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes("<table><tr style='text-align:left'><th>Setting</th><th>Value</ht></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Host name</td><td>{actualHostName}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Host IP</td><td>{actualhostIp}</td></tr>", "utf-8"))
+            self.wfile.write(bytes(f"<tr><td>Request</td><td>{self.requestline}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Requestor Address</td><td>{self.address_string()}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Request date</td><td>{self.date_time_string()}</td></tr>", "utf-8"))
             self.wfile.write(bytes("</table>", "utf-8"))
+            if self.path.find('headers') > -1:
+                self.wfile.write(bytes("<h2>Headers</h2>", "utf-8"))
+                self.wfile.write(bytes("<table><tr style='text-align:left'><th>Key</th><th>Value</ht></tr>", "utf-8"))
+                for header, value in self.headers.items():
+                    self.wfile.write(bytes(f"<tr><td>{header}</td><td>{value}</td></tr>", "utf-8"))
+                self.wfile.write(bytes("</table>", "utf-8"))
+
             
             self.wfile.write(bytes("</body></html>", "utf-8"))
         else:
