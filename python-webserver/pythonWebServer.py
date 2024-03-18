@@ -38,6 +38,8 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes(f"<tr><td>Host IP</td><td>{actualhostIp}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Request</td><td>{self.requestline}</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Requestor Address</td><td>{self.address_string()}</td></tr>", "utf-8"))
+            if self.headers['x_secret_code']:
+                self.wfile.write(bytes(f"<tr><td>Secret code</td><td>1995-08-24</td></tr>", "utf-8"))
             self.wfile.write(bytes(f"<tr><td>Request date</td><td>{self.date_time_string()}</td></tr>", "utf-8"))
             self.wfile.write(bytes("</table>", "utf-8"))
             if self.path.find('headers') > -1:
