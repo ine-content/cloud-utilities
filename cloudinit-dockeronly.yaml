@@ -1,0 +1,7 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - wget
+  - curl
+runcmd:
+  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/deployment-docker.sh | sh
