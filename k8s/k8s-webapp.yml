@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-front
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-front
+  template:
+    metadata:
+      labels:
+        app: demo-front
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: demo-front
+        image: twallace27603/inedemowebserver:1.0
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 80
+        env:
+        - name: message
+          value: "This is a demo Kubernetes front end service."
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-front
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: demo-front
