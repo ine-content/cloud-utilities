@@ -1,0 +1,11 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - wget
+  - curl
+write_files:
+  - content: |
+      message=Updated Scaleset
+    path: /var/lib/mywebapp/docenv
+runcmd:
+  - curl https://raw.githubusercontent.com/ine-content/cloud-utilities/main/csharp-webserver/deployment.sh | sh
